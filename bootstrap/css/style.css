@@ -1,0 +1,618 @@
+@import url("https://fonts.googleapis.com/css?family=Ubuntu&display=swap");
+html {
+  scroll-behavior: smooth;
+}
+body {
+  font-family: "Ubuntu", sans-serif;
+}
+.btn {
+  border-radius: 50px;
+}
+/* ----------------- Navbar -------------- */
+.navbar {
+  padding: 25px 0 !important;
+  font-size: 20px;
+}
+.navbar .navbar-brand {
+  font-size: 25px;
+  font-weight: bold;
+}
+.top-nav-collapse {
+  background-color: black;
+  padding: 0.75rem !important;
+}
+/* -------------- Landing Page ------------- */
+.landing-div {
+  background: white url("../images/bg-main.jpg") no-repeat scroll center;
+  height: 100vh;
+  background-size: cover;
+  color: white;
+}
+.landing-wrapper {
+  /* background-color: rgba(0, 0, 0, 0.5); */
+  height: 100%;
+}
+.landing-wrapper h1 {
+  font-size: 80px;
+}
+.display {
+  text-align: center;
+  text-transform: uppercase;
+  color: red;
+}
+.display-text {
+  text-align: center;
+}
+.btn-wrapper {
+  text-align: center;
+}
+
+.btn-center {
+  position: relative;
+  /* top: 50%; */
+}
+.explore {
+  display: inline-block;
+  font-size: 1em;
+  background: #fff;
+  padding: 10px 30px;
+  text-transform: uppercase;
+  text-decoration: none;
+  font-weight: 500;
+  margin-top: 10px;
+  color: #111;
+  letter-spacing: 2px;
+  transition: 0.2s;
+}
+.explore:hover {
+  letter-spacing: 6px;
+}
+/* ------------- Tour Images Section ------------*/
+.tour-image {
+  border-radius: 10px;
+  box-shadow: 0 15px 15px black;
+}
+
+/* .tour-image1 {
+  margin-left: 75px;
+} */
+
+/* ------------- Destination Cards Section ----------------- */
+
+.dest-card {
+  border-radius: 10px !important;
+  color: white;
+  cursor: pointer;
+}
+
+.dest-card-img {
+  border-radius: 10px !important;
+  position: relative;
+}
+
+.dest-card-title {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+}
+
+.dest-card-info h4 {
+  margin-bottom: 0;
+}
+
+.dest-card-info {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  background-color: coral;
+  color: white;
+  padding: 10px 15px;
+  border-radius: 0 50px 50px 0;
+  width: 45%;
+  transition: all 0.5s;
+  text-align: right;
+}
+
+.dest-card:hover .dest-card-info {
+  width: 60%;
+  background-color: orangered;
+}
+
+.dest-card:hover {
+  transform: scale(1.15);
+}
+
+/* ------------------ Locations Section ---------------- */
+.location-card {
+  box-shadow: 0 10px 10px black;
+  border-radius: 10px;
+}
+
+.location-img {
+  position: relative;
+}
+
+.location-price {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background-color: rgba(0, 250, 0, 0.5);
+  padding: 10px 15px;
+  color: white;
+  border-radius: 10px;
+}
+
+/* ---------------- Main Footer -------------- */
+.main-footer {
+  background: white url("../images/attractn/bg-image.jpg") no-repeat scroll
+    center;
+  background-size: cover;
+  color: white;
+}
+
+.footer-wrapper {
+  background-color: rgba(0, 0, 0, 0.8);
+  height: 100%;
+}
+
+.img-class {
+  width: 100%;
+  display: block;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  transition: transform 1000ms;
+}
+
+.ul-class {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 0.5rem;
+  grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+  max-width: 100%;
+  width: 70rem;
+}
+
+figure {
+  margin: 0;
+  position: relative;
+  overflow: hidden;
+}
+
+figure::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 200%;
+  height: 200%;
+  background: rgba(0, 0, 0, 0.5);
+  transform-origin: center;
+  opacity: 0;
+  transform: scale(2);
+  transition: opacity 300ms;
+}
+
+figcaption {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  place-items: center;
+  text-align: center;
+  padding: 1rem;
+  color: white;
+  font-size: 1.2rem;
+  z-index: 1;
+  opacity: 0;
+  transition: opacity 600ms, transform 600ms;
+}
+
+.a-class:is(:hover, :focus) figure::after {
+  opacity: 1;
+}
+
+.a-class:is(:hover, :focus) figcaption {
+  opacity: 1;
+  transition: opacity 600ms;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  figcaption {
+    transform: translate3d(0, 2rem, 0);
+  }
+
+  figure::after {
+    border-radius: 50%;
+    opacity: 1;
+    transform: scale(0);
+    transition: transform 900ms;
+  }
+
+  .a-class:is(:hover, :focus) figure::after {
+    transform: scale(2.5);
+  }
+
+  .a-class:is(:hover, :focus) figcaption {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+    transition: opacity 600ms 400ms, transform 600ms 400ms;
+  }
+
+  .a-class:is(:hover, :focus) img {
+    transform: scale(1.2);
+  }
+}
+.cb-slideshow,
+.cb-slideshow:after {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0px;
+  left: 0px;
+  z-index: 0;
+}
+.cb-slideshow:after {
+  content: "";
+  /* background: transparent url("../img/bg4.jpg") repeat top left; */
+}
+.cb-slideshow li {
+  list-style-type: none;
+}
+.cb-slideshow li span {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  color: transparent;
+  background-size: cover;
+  background-position: 50% 50%;
+  background-repeat: none;
+  opacity: 0;
+  z-index: 0;
+  animation: imageAnimation 36s linear infinite 0s;
+}
+.cb-slideshow li div {
+  z-index: 1000;
+  position: absolute;
+  bottom: 30px;
+  left: 0px;
+  width: 100%;
+  text-align: center;
+  opacity: 0;
+  color: #fff;
+  animation: titleAnimation 36s linear infinite 0s;
+}
+.cb-slideshow li div h3 {
+  font-family: "BebasNeueRegular", "Arial Narrow", Arial, sans-serif;
+  font-size: 240px;
+  padding: 0;
+  line-height: 200px;
+}
+.cb-slideshow li:nth-child(1) span {
+  background-image: url(../img/bg1.jpg);
+}
+.cb-slideshow li:nth-child(2) span {
+  background-image: url(../img/bg2.jpg);
+  animation-delay: 6s;
+}
+.cb-slideshow li:nth-child(3) span {
+  background-image: url(../img/bg3.jpg);
+  animation-delay: 12s;
+}
+.cb-slideshow li:nth-child(4) span {
+  background-image: url(../img/bg4.jpg);
+  animation-delay: 18s;
+}
+.cb-slideshow li:nth-child(5) span {
+  background-image: url(../img/bg1.jpg);
+  animation-delay: 24s;
+}
+.cb-slideshow li:nth-child(6) span {
+  background-image: url(../img/bg2.jpg);
+  animation-delay: 30s;
+}
+
+.cb-slideshow li:nth-child(2) div {
+  animation-delay: 6s;
+}
+.cb-slideshow li:nth-child(3) div {
+  animation-delay: 12s;
+}
+.cb-slideshow li:nth-child(4) div {
+  animation-delay: 18s;
+}
+.cb-slideshow li:nth-child(5) div {
+  animation-delay: 24s;
+}
+.cb-slideshow li:nth-child(6) div {
+  animation-delay: 30s;
+}
+@keyframes imageAnimation {
+  0% {
+    opacity: 0;
+    animation-timing-function: ease-in;
+  }
+  8% {
+    opacity: 1;
+    animation-timing-function: ease-out;
+  }
+  17% {
+    opacity: 1;
+  }
+  25% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@keyframes titleAnimation {
+  0% {
+    opacity: 0;
+  }
+  8% {
+    opacity: 1;
+  }
+  17% {
+    opacity: 1;
+  }
+  19% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+.no-cssanimations .cb-slideshow li span {
+  opacity: 1;
+}
+@media screen and (max-width: 1140px) {
+  .cb-slideshow li div h3 {
+    font-size: 140px;
+  }
+}
+@media screen and (max-width: 600px) {
+  .cb-slideshow li div h3 {
+    font-size: 80px;
+  }
+}
+.background-class {
+  background: white url("../images/bg1.jpg") no-repeat cover center;
+  height: 100vh;
+  background-size: cover;
+  color: white;
+}
+.footer-class {
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+  background-color: black;
+  color: white;
+}
+
+.form-box {
+  background-color: transparent;
+  margin: auto auto;
+  padding: 40px;
+  border-radius: 5px;
+  /* box-shadow: 0 0 10px #000; */
+  position: absolute;
+  /* top: 0; */
+  /* bottom: 0; */
+  left: 0;
+  right: 0;
+  width: 500px;
+  /* height: 450px; */
+  margin-top: 80px;
+}
+.form-style {
+  /* margin-top: 0%; */
+  margin-bottom: 10%;
+}
+.form-box:before {
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  content: "";
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  z-index: -1;
+  display: block;
+  /* filter: blur(2px); */
+}
+.form-box .header-text {
+  font-size: 16px;
+
+  padding-bottom: 30px;
+  text-align: center;
+  color: #fff;
+}
+.form-box input {
+  margin: 10px 0px;
+  border: none;
+  padding: 10px;
+  border-radius: 5px;
+  width: 100%;
+  font-size: 18px;
+  font-family: poppins;
+}
+.form-box input[type="checkbox"] {
+  display: none;
+}
+.form-box label {
+  position: relative;
+  margin-left: 5px;
+  margin-right: 10px;
+  top: 5px;
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+}
+.form-box label:before {
+  content: "";
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  border-radius: 5px;
+  position: absolute;
+  left: 0;
+  bottom: 1px;
+  background-color: #ddd;
+}
+.form-box input[type="checkbox"]:checked + label:before {
+  content: "\2713";
+  font-size: 20px;
+  color: #000;
+  text-align: center;
+  line-height: 20px;
+}
+.form-box span {
+  font-size: 14px;
+  color: #bbb;
+}
+.form-box button {
+  background-color: #4caf50;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  width: 100%;
+  font-size: 18px;
+  padding: 10px;
+  margin: 20px 0px;
+}
+span a {
+  color: #bbb;
+}
+
+.message {
+  color: #b3b3b3;
+  font-size: 14px;
+}
+.message a {
+  color: #4caf50;
+  text-decoration: none;
+}
+.landing-div1 {
+  background: white
+    url("../images/alapuzha/6a850c114932783.Y3JvcCwyNTU2LDIwMDAsMjIxLDA.jpg")
+    no-repeat scroll center;
+  height: 100vh;
+  background-size: cover;
+  color: white;
+}
+.landing-div2 {
+  background: white url("../images/attractn/cochin-long-image.jpg") no-repeat
+    scroll center;
+  height: 100vh;
+  background-size: cover;
+  color: white;
+}
+.landing-div3 {
+  background: white url("../images/idukki/Thekkady.jpg") no-repeat scroll center;
+  height: 100vh;
+  background-size: cover;
+  color: white;
+}
+.landing-div4 {
+  background: white
+    url("../images/attractn/andy_pariat_shillong_nature_photography_01.jpg")
+    no-repeat scroll center;
+  height: 100vh;
+  background-size: cover;
+  color: white;
+}
+.landing-div5 {
+  background: white url("../images/attractn/connectwithnature.jpg") no-repeat
+    scroll center;
+  height: 100vh;
+  background-size: cover;
+  color: white;
+}
+.landing-div6 {
+  background: white url("../images/kollam/splendid-view\ \(2\).jpg") no-repeat
+    scroll center;
+  height: 100vh;
+  background-size: cover;
+  color: white;
+}
+.landing-div7 {
+  background: white
+    url("../images/kottayam/1520229278_Banner-image-1920_kl0zqp.jpg.webp")
+    no-repeat scroll center;
+  height: 100vh;
+  background-size: cover;
+  color: white;
+}
+.landing-div8 {
+  background: white url("../images/kozhikodu/thikkoti\ kight\ house.jpg")
+    no-repeat scroll center;
+  height: 100vh;
+  background-size: cover;
+  color: white;
+}
+.landing-div9 {
+  background: white url("../images/malapuram/kettungal\ beach.jfif") no-repeat
+    scroll center;
+  height: 100vh;
+  background-size: cover;
+  color: white;
+}
+.landing-div10 {
+  background: white url("../images/palakadu/bg2.jfif") no-repeat scroll center;
+  height: 100vh;
+  background-size: cover;
+  color: white;
+}
+.landing-div11 {
+  background: white url("../images/pathanamthitta/bg.jpg") no-repeat scroll
+    center;
+  height: 100vh;
+  background-size: cover;
+  color: white;
+}
+.landing-div12 {
+  background: white url("../images/tvm/_Kovalam_Beach_.JPG.jpg") no-repeat
+    scroll center;
+  height: 100vh;
+  background-size: cover;
+  color: white;
+}
+.landing-div13 {
+  background: white url("../images/thrissur/bg7.jpg") no-repeat scroll center;
+  height: 100vh;
+  background-size: cover;
+  color: white;
+}
+.landing-div14 {
+  background: white
+    url("../images/attractn/HD-wallpaper-lake-blue-sky-sunset-lake-sky-sunset-nature.jpg")
+    no-repeat scroll center;
+  height: 100vh;
+  background-size: cover;
+  color: white;
+}
+
+.social-icon i {
+  display: inline;
+  margin: 6px;
+  font-size: 30px;
+  color: white;
+}
+.landing-div0 {
+  background: white url("../images/attractn/HD-wallpaper-lake-sunset.jpg")
+    no-repeat scroll center;
+  height: 100vh;
+  background-size: cover;
+  color: white;
+}
